@@ -1,0 +1,22 @@
+.text-btn {
+  display: inline-block;
+  background-color: transparent;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  border: none;
+  padding: 0 10px;
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  background-color: $black-color;
+  color: #fff;
+  border-radius: 0px;
+  font-size: 14px;
+  text-align: center;
+  border: none;
+  padding: 5 20px;
+  text-decoration: none;
+}

@@ -1,0 +1,27 @@
+.cart-item {
+  margin: 20px 0;
+  display: flex;
+
+  .image {
+    width: 100px;
+    height: 80px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  
+  .info {
+    margin: 10px 10px;
+    
+    .name {
+      width: 200px;
+    }
+  }
+
+  .quantity {
+    margin: 10px 10px;
+  }
+}

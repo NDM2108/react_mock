@@ -1,0 +1,35 @@
+.header {
+  background-color: $primary-color;
+  height: 60px;
+  display: flex;
+  align-items: center;
+
+  .logo {
+    flex: 1;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    padding: 0 80px;
+    text-decoration: none;
+  }
+
+  .group-btn {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-bar {
+    flex: 4;
+
+    .search-input {
+      width: 400px;
+    }
+  }
+
+  .dropdown-title {
+    color: white;
+  }
+}

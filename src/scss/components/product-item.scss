@@ -1,0 +1,33 @@
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.product-item {
+  display: flex;
+  justify-content: center;
+
+  .product-content {
+    width: 240px;
+    height: 320px;
+    border: 1px solid grey;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .product-image {
+      width: 220px;
+      height: 200px;
+      margin-top: 10px;
+    }
+
+    .product-name, .product-rating, .product-price{
+      width: 200px;
+    }
+
+    .product-price {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+}

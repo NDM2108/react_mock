@@ -1,0 +1,81 @@
+.details-content {
+  width: 80vw;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  
+  .back {
+    width: 80vw;
+    padding: 20px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .details-image {
+    flex: 4;
+    min-width: 400px;
+    img {
+      max-height:100%;
+      max-width:100%;
+    }
+  }
+
+  .information {
+    flex: 2;
+    min-width: 200px;
+    max-width: 300px;
+    margin: 40px 40px;
+
+    .name {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .rating {
+      margin: 10px 0;
+    }
+
+    .price {
+      margin: 10px 0;
+    }
+
+    .description {
+      margin: 10px 0;
+    }
+  }
+
+  .cart {
+    flex: 2;
+    min-width: 200px;
+    max-width: 300px;
+    height: 200px;
+    border: 1px solid grey;
+    margin: 40px 40px;
+
+    .price {
+      padding: 10px;
+    }
+
+    .stock {
+      padding: 10px;
+    }
+
+    .quantity {
+      padding: 10px;
+    }
+
+    .button {
+      height: 100%;
+    }
+  }
+
+  .review {
+    width: 80vw;
+    
+    .review-title {
+      font-size: 32px;
+      margin: 20px 0px;
+    }
+  }
+}

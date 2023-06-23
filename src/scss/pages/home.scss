@@ -1,0 +1,29 @@
+.home-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .carousel {
+    width: 80vw;
+    margin-top: 20px;
+
+    .carousel-item {
+      height: 400px;
+      background-color: grey;
+      object-fit: contain;
+    }
+  }
+
+  .title {
+    width: 80vw;
+    font-size: 32px;
+    margin: 20px 0;
+  }
+
+  .product-list {
+    width: 80vw;
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}

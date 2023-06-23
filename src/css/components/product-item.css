@@ -1,0 +1,31 @@
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.product-item {
+  display: flex;
+  justify-content: center;
+}
+.product-item .product-content {
+  width: 240px;
+  height: 320px;
+  border: 1px solid grey;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.product-item .product-content .product-image {
+  width: 220px;
+  height: 200px;
+  margin-top: 10px;
+}
+.product-item .product-content .product-name, .product-item .product-content .product-rating, .product-item .product-content .product-price {
+  width: 200px;
+}
+.product-item .product-content .product-price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=product-item.css.map */
