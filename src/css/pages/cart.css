@@ -18,10 +18,10 @@
   border: 1px solid grey;
   margin-left: 20px;
 }
-.cart .cart-infomation .count {
+.cart .cart-infomation .total .count {
   margin: 10px 20px;
 }
-.cart .cart-infomation .price {
+.cart .cart-infomation .total .price {
   margin: 10px 20px;
 }
 

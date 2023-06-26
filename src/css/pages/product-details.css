@@ -42,7 +42,7 @@
   flex: 2;
   min-width: 200px;
   max-width: 300px;
-  height: 200px;
+  height: 180px;
   border: 1px solid grey;
   margin: 40px 40px;
 }
@@ -55,12 +55,23 @@
 .details-content .cart .quantity {
   padding: 10px;
 }
+.details-content .cart .btn {
+  height: 50px;
+  width: 100%;
+}
 .details-content .review {
-  width: 80vw;
+  width: 40vw;
 }
 .details-content .review .review-title {
   font-size: 32px;
   margin: 20px 0px;
+}
+.details-content .review .write-review {
+  font-size: 24px;
+  margin: 20px 0;
+}
+.details-content .review .rating, .details-content .review .rate, .details-content .review .comment, .details-content .review .input, .details-content .review .btn {
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=product-details.css.map */

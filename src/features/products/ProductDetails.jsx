@@ -2,10 +2,11 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { useEffect, useState } from "react";
 import { productRepository } from "../../repository/productRepository";
-import { Button, InputNumber, Rate } from "antd";
+import { Button, Input, InputNumber, Rate } from "antd";
 import { ReviewItem } from "../../components/ReviewItem";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../cart/cartSlice";
+import TextArea from "antd/es/input/TextArea";
 
 export const ProductDetails = () => {
   const dispatch = useDispatch();
@@ -88,6 +89,13 @@ export const ProductDetails = () => {
                 />
               );
             })}
+          <hr />
+          <div className="write-review">WRITE A CUSTOMER REVIEW</div>
+          <div className="rating">Rating</div>
+          <Rate className="rate" allowClear={false} defaultValue={5} />
+          <div className="comment">Comment</div>
+          <TextArea className="input" rows={2} />
+          <Button className="btn">Submit</Button>
         </div>
       </div>
     </div>

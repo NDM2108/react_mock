@@ -1,6 +1,7 @@
 import { InputNumber } from "antd";
 import { useDispatch } from "react-redux";
-import { changeQuantity } from "../features/cart/cartSlice";
+import { changeQuantity, removeItemInCart } from "../features/cart/cartSlice";
+import { CloseOutlined } from "@ant-design/icons";
 
 export const CartItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -16,7 +17,6 @@ export const CartItem = ({ item }) => {
       </div>
       <div className="quantity">
         <InputNumber
-          size="small"
           min={1}
           max={1000}
           defaultValue={item.quantity}
@@ -27,7 +27,13 @@ export const CartItem = ({ item }) => {
           }}
         />
       </div>
-      <div className="remove"></div>
+      <div className="remove">
+        <CloseOutlined
+          onClick={() => {
+            dispatch(removeItemInCart({ id: item?.product?.id }));
+          }}
+        />
+      </div>
     </div>
   );
 };
