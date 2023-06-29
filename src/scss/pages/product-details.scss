@@ -12,7 +12,7 @@
   }
 
   .details-image {
-    flex: 4;
+    flex: 1;
     min-width: 400px;
     img {
       max-height:100%;
@@ -21,52 +21,23 @@
   }
 
   .information {
-    flex: 2;
-    min-width: 200px;
-    max-width: 300px;
-    margin: 40px 40px;
+    flex: 1;
+    min-width: 400px;
+    padding: 40px 40px;
+    box-sizing: content-box; 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 320px;
+    margin-left: 40px;
 
     .name {
-      font-size: 24px;
+      font-size: 32px;
       font-weight: 600;
       margin-bottom: 20px;
     }
 
-    .rating {
-      margin: 10px 0;
-    }
-
-    .price {
-      margin: 10px 0;
-    }
-
-    .description {
-      margin: 10px 0;
-    }
-  }
-
-  .cart {
-    flex: 2;
-    min-width: 200px;
-    max-width: 300px;
-    height: 180px;
-    border: 1px solid grey;
-    margin: 40px 40px;
-
-    .price {
-      padding: 10px;
-    }
-
-    .stock {
-      padding: 10px;
-    }
-
-    .quantity {
-      padding: 10px;
-    }
-
-    .btn {
-      height: 50px;
+    .description, .rating, .stock, .quantity, .price {
       width: 100%;
     }
   }

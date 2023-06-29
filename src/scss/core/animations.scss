@@ -1,0 +1,15 @@
+@keyframes fade-go-up {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.fade-go-up {
+  animation: fade-go-up .5s;
+}

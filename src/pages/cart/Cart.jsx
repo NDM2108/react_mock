@@ -4,6 +4,7 @@ import { CartItem } from "../../components/CartItem";
 
 export const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  console.log(cart);
 
   const totalItemCount = cart.reduce(
     (accumulator, currentValue) => accumulator + currentValue.quantity,

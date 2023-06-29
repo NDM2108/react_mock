@@ -1,6 +1,6 @@
 import { InputNumber } from "antd";
 import { useDispatch } from "react-redux";
-import { changeQuantity, removeItemInCart } from "../features/cart/cartSlice";
+import { changeQuantity, removeItemInCart } from "../app/redux/cartSlice";
 import { CloseOutlined } from "@ant-design/icons";
 
 export const CartItem = ({ item }) => {

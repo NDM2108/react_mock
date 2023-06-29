@@ -1,18 +1,22 @@
 import { Button, Form, Input } from "antd";
-import { Header } from "../../../components/Header";
+import { Header } from "../../components/Header";
 import { useDispatch } from "react-redux";
-import { login } from "../authenticateSlice";
 import { useNavigate } from "react-router-dom";
+import { authenticateRepository } from "../../repository/authenticateRepository";
+import { login } from "../../app/redux/authenticateSlice";
 
 export const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const onFinish = async (values) => {
-    const state = dispatch(login(values));
-    state.then(() => {
+    try {
+      const response = await authenticateRepository.login(values);
+      dispatch(login(response.data));
       navigate("/");
-    });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

@@ -2,10 +2,10 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { useEffect, useState } from "react";
 import { productRepository } from "../../repository/productRepository";
-import { Button, Input, InputNumber, Rate } from "antd";
+import { Button, InputNumber, Rate } from "antd";
 import { ReviewItem } from "../../components/ReviewItem";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../cart/cartSlice";
+import { addToCart } from "../../app/redux/cartSlice";
 import TextArea from "antd/es/input/TextArea";
 
 export const ProductDetails = () => {
@@ -40,22 +40,12 @@ export const ProductDetails = () => {
         </div>
         <div className="information">
           <div className="name">{details?.product?.name}</div>
-          <hr />
+          <div className="description">{`Description: ${details?.product?.description}`}</div>
           <div className="rating">
             <Rate disabled value={details?.product?.rating} />
           </div>
-          <hr />
           <div className="price">{`Price: $${details?.product?.price}`}</div>
-          <hr />
-          <div className="description">{`Description: ${details?.product?.description}`}</div>
-        </div>
-        <div className="cart">
-          <div className="price">{`Price: $${
-            quantity * details?.product?.price
-          }`}</div>
-          <hr />
           <div className="stock">{`In stock: ${details?.product?.countInStock}`}</div>
-          <hr />
           <div className="quantity">
             <span>Quantity: </span>
             <InputNumber
@@ -68,9 +58,16 @@ export const ProductDetails = () => {
               }}
             />
           </div>
-          <hr />
           <Button
             className="btn"
+            onClick={() => {
+              dispatch(addToCart({ ...details, quantity: quantity }));
+            }}
+          >
+            Buy now
+          </Button>
+          <Button
+            className="btn-secondary"
             onClick={() => {
               dispatch(addToCart({ ...details, quantity: quantity }));
             }}
