@@ -25,9 +25,6 @@ export const ProductDetails = () => {
     fetchData();
   }, [id]);
 
-  console.log(details);
-  console.log(details?.product?.rating);
-
   return (
     <div>
       <Header />
@@ -49,7 +46,6 @@ export const ProductDetails = () => {
           <div className="quantity">
             <span>Quantity: </span>
             <InputNumber
-              size="small"
               min={1}
               max={1000}
               defaultValue={quantity}

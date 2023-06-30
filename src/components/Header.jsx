@@ -5,7 +5,9 @@ import { useDispatch } from "react-redux";
 import { logout } from "../app/redux/authenticateSlice";
 import { authenticateRepository } from "../repository/authenticateRepository";
 import { CartPopup } from "./CartPopup";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { SearchPopup } from "./SearchPopup";
+import { productRepository } from "../repository/productRepository";
 
 export const Header = () => {
   const cart = useSelector((state) => state.cart);
@@ -13,6 +15,18 @@ export const Header = () => {
   const userInfo = useSelector((state) => state.authenticate.userInfo);
   const dispatch = useDispatch();
   const [isSearching, setIsSearching] = useState(false);
+  const [searchKeyword, setSearchKeyword] = useState("");
+  const [listProduct, setListProduct] = useState([]);
+
+  useEffect(() => {
+    const searchProduct = async () => {
+      if (searchKeyword === "") return;
+      const products = await productRepository.searchProducts(searchKeyword);
+      setListProduct(products.data.products.result);
+    };
+
+    searchProduct();
+  }, [searchKeyword]);
 
   const handleLogout = async () => {
     try {
@@ -46,21 +60,27 @@ export const Header = () => {
         <div className={`option ${isSearching ? "hide" : ""}`}>Deals</div>
         <div className={`option ${isSearching ? "hide" : ""}`}>What's new</div>
         <div className={`option ${isSearching ? "hide" : ""}`}>Delivery</div>
-        <Input
-          className={`input search-input ${isSearching ? "searching" : ""}`}
-          placeholder="Search products..."
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              navigate(`/search?keyword=${e.target.value}`);
-            }
-          }}
-          onFocus={() => {
-            setIsSearching(true);
-          }}
-          onBlur={() => {
-            setIsSearching(false);
-          }}
-        />
+        <div className={`search-input ${isSearching ? "searching" : ""}`}>
+          <Input
+            className="input"
+            placeholder="Search products..."
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                navigate(`/search?keyword=${e.target.value}`);
+              }
+            }}
+            onChange={(e) => {
+              setSearchKeyword(e.target.value);
+            }}
+            onFocus={() => {
+              setIsSearching(true);
+            }}
+            onBlur={() => {
+              setIsSearching(false);
+            }}
+          />
+          <SearchPopup items={listProduct} visible={isSearching} />
+        </div>
       </div>
       <div className="group-btn">
         <div className="cart-btn">

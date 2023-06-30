@@ -15,8 +15,6 @@
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  opacity: 0;
-  animation-fill-mode: forwards;
 }
 .home-content .advertisement .ad .text {
   width: 100%;

@@ -28,7 +28,6 @@ export const ProductItem = ({ product, delay }) => {
         <Button
           className="btn"
           onClick={() => {
-            console.log(1234);
             dispatch(addToCart({ product: product, quantity: 1 }));
           }}
         >

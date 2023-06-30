@@ -11,5 +11,7 @@
 }
 
 .fade-go-up {
+  opacity: 0;
   animation: fade-go-up .5s;
+  animation-fill-mode: forwards;
 }

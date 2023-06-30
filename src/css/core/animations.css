@@ -9,7 +9,9 @@
   }
 }
 .fade-go-up {
+  opacity: 0;
   animation: fade-go-up 0.5s;
+  animation-fill-mode: forwards;
 }
 
 /*# sourceMappingURL=animations.css.map */
